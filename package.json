@@ -1,6 +1,8 @@
 {
   "name": "clipboard-helper",
-  "displayName": "clipboard-helper",
+  "displayName": "Clipboard Helper",
+  "author": "ayuan",
+  "publisher": "ayuan",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -9,6 +11,7 @@
   "categories": [
     "Other"
   ],
+  "icon": "assets/icon.png",
   "activationEvents": [],
   "main": "./out/extension.js",
   "repository": {
@@ -63,7 +66,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "publish": "vsce publish --no-yarn"
   },
   "devDependencies": {
     "@types/vscode": "^1.70.0",
