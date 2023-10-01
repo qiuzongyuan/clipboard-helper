@@ -11,6 +11,10 @@
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qiuzongyuan/clipboard-helper"
+  },
   "contributes": {
     "commands": [
       {
@@ -47,8 +51,8 @@
     "menus": {
       "view/item/context": [
         {
-            "command": "copyHistoryItem",
-            "when": "view == history && viewItem == historyItem"
+          "command": "copyHistoryItem",
+          "when": "view == history && viewItem == historyItem"
         }
      ]
     }
