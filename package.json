@@ -4,7 +4,7 @@
   "author": "ayuan",
   "publisher": "ayuan",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -12,7 +12,9 @@
     "Other"
   ],
   "icon": "assets/icon.png",
-  "activationEvents": [],
+  "activationEvents": [
+    "*"
+  ],
   "main": "./out/extension.js",
   "repository": {
     "type": "git",

@@ -24,7 +24,7 @@ export function activate(context: ExtensionContext) {
 
   let clickCount = 0;
   let clickTimer: ReturnType<typeof setTimeout>;
-  commands.registerCommand('clickHistoryItem', async ({ content }: HistoryItem) => {
+  const clickCommand = commands.registerCommand('clickHistoryItem', async ({ content }: HistoryItem) => {
     clickCount++;
     clearTimeout(clickTimer);
     clickTimer = setTimeout(async () => {
@@ -40,13 +40,15 @@ export function activate(context: ExtensionContext) {
     }, 150);
   });
 
-	commands.registerCommand('deleteHistoryItem', ({ id }: HistoryItem) => {
+	const deleteCommand = commands.registerCommand('deleteHistoryItem', ({ id }: HistoryItem) => {
 		id && clipboardHelper.delete(id);
 	});
 
-	commands.registerCommand('copyHistoryItem', ({ content }: HistoryItem) => {
+	const copyCommand = commands.registerCommand('copyHistoryItem', ({ content }: HistoryItem) => {
 		content && env.clipboard.writeText(content);
 	});
+  
+  [clickCommand, deleteCommand, copyCommand].forEach(disposable => context.subscriptions.push(disposable));
 }
 
 export function deactivate() {}
