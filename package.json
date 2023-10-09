@@ -4,7 +4,7 @@
   "author": "ayuan",
   "publisher": "ayuan",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -13,7 +13,7 @@
   ],
   "icon": "assets/icon.png",
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "repository": {
